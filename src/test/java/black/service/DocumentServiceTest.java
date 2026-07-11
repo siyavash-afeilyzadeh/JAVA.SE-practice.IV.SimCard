@@ -16,6 +16,14 @@ public class DocumentServiceTest {
                 .age(32)
                 .build();
 
+        Person person2 = Person
+                .builder()
+                .id(2)
+                .name("Hoda")
+                .family("Kal")
+                .age(16)
+                .build();
+
         SimCard simcard1 = SimCard
                 .builder()
                 .id(1)
@@ -61,8 +69,8 @@ public class DocumentServiceTest {
         Document document3 = Document
                 .builder()
                 .id(3)
-                .person(person1)
-                .simCard(simcard3)
+                .person(person2)
+                .simCard(simcard1)
                 .price(254.21)
                 .build();
 
@@ -76,14 +84,23 @@ public class DocumentServiceTest {
         DocumentService documentService = new DocumentService();
         documentService.saveDocument(document1);
         documentService.saveDocument(document2);
-        documentService.saveDocument(document3);
+//        documentService.saveDocument(document3);
         System.out.println("*".repeat(20));
-
-        System.out.println(person1);
+//
+//        System.out.println(person1);
+//        System.out.println("*".repeat(20));
+//        System.out.println(document1);
+//        System.out.println(document2);
+//        System.out.println(document3);
+        DocumentService.findByPersonId(1);
+        System.out.println("*".repeat(10));
+        DocumentService.findByPersonName("Sia");
+        System.out.println("*".repeat(10));
+        DocumentService.findByPersonFamily("Afil");
         System.out.println("*".repeat(20));
-        System.out.println(document1);
-        System.out.println(document2);
-        System.out.println(document3);
+        DocumentService.findBySimCardId(1);
+        System.out.println("*".repeat(10));
+        DocumentService.findBySimCardNumber("156");
 
     }
 }
