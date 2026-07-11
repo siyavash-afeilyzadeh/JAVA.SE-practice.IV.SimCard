@@ -6,7 +6,6 @@ public class PersonServiceTest {
     public static void main(String[] args) {
         Person person1 = Person
                 .builder()
-                .id(1)
                 .name("Sia")
                 .family("Afil")
                 .age(32)
@@ -14,7 +13,6 @@ public class PersonServiceTest {
 
         Person person2 = Person
                 .builder()
-                .id(2)
                 .name("Hoda")
                 .family("Kal")
                 .age(16)

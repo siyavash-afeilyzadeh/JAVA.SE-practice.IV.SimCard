@@ -8,7 +8,6 @@ public class SimCardServiceTest {
     public static void main(String[] args) {
         SimCard simcard1 = SimCard
                 .builder()
-                .id(1)
                 .number("234")
                 .operator(Operator.MCI)
                 .status(Status.Active)
@@ -16,7 +15,6 @@ public class SimCardServiceTest {
 
         SimCard simcard2 = SimCard
                 .builder()
-                .id(2)
                 .number("156")
                 .operator(Operator.Irancell)
                 .status(Status.Active)
@@ -24,7 +22,6 @@ public class SimCardServiceTest {
 
         SimCard simcard3 = SimCard
                 .builder()
-                .id(3)
                 .number("754")
                 .operator(Operator.Rightel)
                 .build();
@@ -37,5 +34,6 @@ public class SimCardServiceTest {
         simCardService.deleteSimCard(simcard2);
         simCardService.printSimCardList();
         simCardService.saveSimCard(simcard2);
+        simCardService.printSimCardList();
     }
 }
