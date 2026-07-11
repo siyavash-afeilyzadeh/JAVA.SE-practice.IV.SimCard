@@ -14,9 +14,16 @@ public class Document {
     private int id;
     private Person person;
     private SimCard simCard;
-
-    @Builder.Default
-    private LocalDate purchaseDate = LocalDate.now();
+    private LocalDate purchaseDate;
 
     private double price;
+
+    @Override
+    public String toString() {
+        return "\nDocument " + id +
+                " Info| Name/Family: " + person.getName() + person.getFamily() +
+                " |SimCard inf: " + getSimCard() +
+                " |Purchase Date: " + getPurchaseDate() +
+                " |Price: " + getPrice();
+    }
 }
